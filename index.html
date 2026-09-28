@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>East Side Ballas | Leaderbewerbung</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --purple: #a855f7;
+    --purple2: #7e22ce;
+    --bg: #07040b;
+    --card: rgba(19, 11, 28, .86);
+    --text: #f5f1f8;
+    --muted: #aaa0b2;
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(168,85,247,.24),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(126,34,206,.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #07040b,
+            #12081a 55%,
+            #07040b
+        );
+}
+
+body:after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: .06;
+
+    background-image:
+        linear-gradient(#fff 1px, transparent 1px),
+        linear-gradient(90deg,#fff 1px,transparent 1px);
+
+    background-size: 55px 55px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(7,4,11,.78);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(168,85,247,.22);
+}
+
+.brand {
+    font-family: Oswald;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.brand span {
+    color: #b967ff;
+}
+
+nav a {
+    color: #c7bdcc;
+    text-decoration: none;
+
+    font-size: 13px;
+    margin-left: 25px;
+
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #c875ff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 7% 80px;
+}
+
+.hero-inner {
+    max-width: 1000px;
+}
+
+.pill {
+    display: inline-block;
+
+    padding: 9px 16px;
+
+    border: 1px solid rgba(191,111,255,.55);
+    border-radius: 999px;
+
+    background: rgba(168,85,247,.09);
+
+    color: #d9a8ff;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-family: Oswald;
+
+    font-size: clamp(54px,10vw,118px);
+
+    line-height: .9;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 45px rgba(168,85,247,.35);
+}
+
+h1 span {
+    color: #ad5bf5;
+}
+
+.hero h2 {
+    margin-top: 18px;
+
+    font-size: clamp(18px,3vw,28px);
+
+    font-weight: 500;
+
+    color: #d7cedc;
+}
+
+.hero p {
+    max-width: 760px;
+
+    margin: 22px auto 0;
+
+    color: #aaa1af;
+
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #b04cf2
+        );
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 35px rgba(126,34,206,.3);
+
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 45px rgba(168,85,247,.42);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 95px 6%;
+}
+
+.title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.title small {
+    color: #a855f7;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.title h2 {
+    font-family: Oswald;
+
+    font-size: 38px;
+
+    margin-top: 7px;
+
+    text-transform: uppercase;
+}
+
+.title p {
+    color: #8f8595;
+
+    margin-top: 8px;
+}
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.card {
+    background: var(--card);
+
+    border:
+        1px solid
+        rgba(168,85,247,.16);
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.24);
+
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(168,85,247,.45);
+}
+
+.card h3 {
+    font-size: 17px;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    margin-bottom: 15px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   PROFIL
+========================= */
+
+.profile {
+    display: grid;
+
+    grid-template-columns:
+        .9fr 1.3fr;
+
+    gap: 18px;
+}
+
+.info {
+    list-style: none;
+}
+
+.info li {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+
+    font-size: 14px;
+}
+
+.info li:last-child {
+    border: 0;
+}
+
+.info .label {
+    color: #857b8c;
+}
+
+.info .value {
+    font-weight: 700;
+
+    text-align: right;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote {
+    margin-top: 18px;
+
+    padding: 32px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(168,85,247,.25);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(126,34,206,.13),
+            rgba(15,8,21,.75)
+        );
+}
+
+.quote strong {
+    font-family: Oswald;
+
+    font-size:
+        clamp(21px,3vw,32px);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.quote p {
+    color: #928799;
+
+    margin-top: 10px;
+}
+
+/* =========================
+   RÄNGE
+========================= */
+
+.ranks {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 10px;
+}
+
+.rank {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,.055);
+
+    border-radius: 10px;
+}
+
+.ranknum {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #ad5bf5
+        );
+
+    font-weight: 900;
+}
+
+.rank b {
+    font-size: 14px;
+}
+
+.rank span {
+    display: block;
+
+    color: #8f8595;
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+/* =========================
+   ZIELE
+========================= */
+
+.steps {
+    display: grid;
+
+    gap: 14px;
+}
+
+.step {
+    display: flex;
+
+    gap: 18px;
+
+    align-items: flex-start;
+}
+
+.num {
+    min-width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #8b2bc9;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 22px
+        rgba(168,85,247,.25);
+}
+
+.step h3 {
+    margin: 3px 0 5px;
+}
+
+.step p {
+    color: #9c92a2;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 55px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    color: #6f6677;
+
+    font-size: 13px;
+}
+
+footer strong {
+    color: #a855f7;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(24px);
+
+    transition: .7s;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+    nav a {
+        display: none;
+    }
+
+    .grid,
+    .profile,
+    .ranks {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="brand">
+        EAST SIDE <span>BALLAS</span>
+    </div>
+
+    <div>
+
+        <a href="#bewerbung">
+            Bewerbung
+        </a>
+
+        <a href="#konzept">
+            Konzept
+        </a>
+
+        <a href="#ranks">
+            Ränge
+        </a>
+
+        <a href="#ziele">
+            Ziele
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-inner">
+
+        <div class="pill">
+            Grand RP • Leaderbewerbung
+        </div>
+
+        <h1>
+            East Side
+            <span>Ballas</span>
+        </h1>
+
+        <h2>
+            Bewerbung zum Leader
+        </h2>
+
+        <p>
+            Maximilian Mccalley | ID 296801
+        </p>
+
+        <p>
+            Wir wollen nicht nur von früher erzählen.
+            Wir wollen gemeinsam etwas Neues aufbauen –
+            mit Loyalität, Zusammenhalt, Aktivität und gutem Roleplay.
+        </p>
+
+        <a
+            class="btn"
+            href="#bewerbung"
+        >
+            Bewerbung ansehen ↓
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     BEWERBUNG
+========================= -->
+
+<section
+    id="bewerbung"
+    class="reveal"
+>
+
+    <div class="title">
+
+        <small>
+            01 • Bewerber
+        </small>
+
+        <h2>
+            OOC & IC Informationen
+        </h2>
+
+        <p>
+            Die wichtigsten Daten auf einen Blick
+        </p>
+
+    </div>
+
+
+    <div class="profile">
+
+
+        <div class="card">
+
+            <ul class="info">
+
+                <li>
+                    <span class="label">
+                        OOC-Name
+                    </span>
+
+                    <span class="value">
+                        Max
+                    </span>
+                </li>
+
+                <li>
+                    <span class="label">
+                        OOC-Alter
+                    </span>
+
+                    <span class="value">
+                        17 Jahre
+                    </span>
+                </li>
+
+                <li>
+                    <span class="label">
+                        Discord
+                    </span>
+
+                    <span class="value">
+                        maxlin24
+                    </span>
+                </li>
+
+                <li>
+                    <span class="label">
+                        IC-Name
+                    </span>
+
+                    <span class="value">
+                        Maximilian Mccalley
+                    </span>
+                </li>
+
+                <li>
+                    <span class="label">
+                        ID
+                    </span>
+
+                    <span class="value">
+                        296801
+                    </span>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Warum willst Du Leader der Organisation werden?
+            </h3>
+
+            <p>
+                Ich möchte Leader der East Side Ballas werden,
+                weil ich eine aktive, organisierte und vor allem
+                RP-orientierte Gang aufbauen möchte. Für mich soll
+                die Organisation nicht nur aus Turf, Schießereien
+                und Geldverdienen bestehen, sondern durchdachte
+                Geschichten, Konflikte, Kontakte zu anderen
+                Organisationen und abwechslungsreiche Situationen
+                bieten.
+            </p>
+
+            <p>
+                Als Leader möchte ich klare Strukturen schaffen,
+                in denen jedes Mitglied weiß, welche Aufgaben es
+                hat und wie es sich innerhalb der Organisation
+                weiterentwickeln kann. Gleichzeitig möchte ich
+                neuen Spielern die Möglichkeit geben, sich
+                einzubringen und Verantwortung zu übernehmen.
+            </p>
+
+            <p>
+                Mein Ziel ist eine Gang, die nach außen geschlossen
+                und selbstbewusst auftritt, intern aber fair und
+                respektvoll miteinander umgeht. Entscheidungen
+                sollen nachvollziehbar sein und nicht allein von
+                Sympathie abhängen.
+            </p>
+
+            <p>
+                Ich möchte die East Side Ballas aktiv mitgestalten
+                und eine organisierte, loyale und zusammenhaltende
+                Gang aufbauen. Für mich geht es nicht darum,
+                einfach möglichst viele Mitglieder zu haben.
+                Entscheidend ist, dass die Mitglieder gerne
+                zusammenspielen und sich aktiv am Gang-RP beteiligen.
+            </p>
+
+            <p>
+                Mein Ziel ist eine Gang, die im Ghetto präsent ist,
+                klare Strukturen besitzt und gleichzeitig genügend
+                Raum für eigene Ideen und abwechslungsreiche
+                RP-Situationen bietet.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="quote">
+
+        <strong>
+            Loyalität, Zusammenhalt und Respekt
+        </strong>
+
+        <p>
+            Gemeinsam machen wir die East Side Ballas
+            zu einer starken Gemeinschaft.
+        </p>
+
+        <p>
+            Maximilian Mccalley • ID 296801
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ROLEPLAY
+========================= -->
+
+<section
+    id="konzept"
+    class="reveal"
+>
+
+    <div class="title">
+
+        <small>
+            02 • Roleplay
+        </small>
+
+        <h2>
+            3. Meine Vorschläge zur Verbesserung
+            des Roleplays in der Organisation
+        </h2>
+
+        <p>
+            Mehr als nur Turfs und Schießereien
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <p>
+            Ein wichtiger Punkt meines Konzeptes ist, dass
+            Roleplay nicht nur dann stattfindet, wenn gerade
+            ein Konflikt entsteht. Ich möchte regelmäßige und
+            abwechslungsreiche RP-Situationen schaffen, an denen
+            möglichst viele Mitglieder beteiligt werden.
+        </p>
+
+        <p>
+            Bei den Alltagssituationen möchte ich darauf achten,
+            dass regelmäßige Treffpunkte, gemeinsame Fahrten,
+            Geschäfte, Verhandlungen und interne Gang-Aktivitäten
+            ausgespielt werden. Konflikte mit anderen Organisationen
+            sollen sich entwickeln und nicht sofort in eine
+            Schießerei ausarten. Gespräche, Forderungen,
+            Abmachungen und daraus entstehende Konsequenzen
+            gehören für mich genauso zum Roleplay wie größere
+            Aktionen.
+        </p>
+
+        <p>
+            Zusätzlich möchte ich regelmäßig kleinere Events
+            und Aufgaben veranstalten, damit auch Mitglieder
+            außerhalb von Turf und Gang-Wars beschäftigt sind.
+            Neue Member sollen von Anfang an eingearbeitet und
+            direkt in RP-Situationen eingebunden werden,
+            anstatt nur einfache Aufgaben zu bekommen.
+        </p>
+
+        <p>
+            Aktionen sollen immer einen nachvollziehbaren
+            Hintergrund haben. Unnötiges RDM, sinnlose
+            Provokationen und schlechtes Verhalten möchte ich
+            innerhalb der Organisation nicht fördern.
+            Auch die Zusammenarbeit mit anderen Organisationen
+            soll genutzt werden, um langfristige Geschichten
+            und interessante Situationen aufzubauen.
+        </p>
+
+        <p>
+            Ich möchte außerdem regelmäßiges Feedback aus der
+            Organisation einholen. Wenn ein Mitglied eine gute
+            Idee für ein Event oder eine RP-Situation hat,
+            soll diese Möglichkeit ernst genommen und bei
+            passender Gelegenheit umgesetzt werden.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LEADER
+========================= -->
+
+<section class="reveal">
+
+    <div class="title">
+
+        <small>
+            03 • Führung
+        </small>
+
+        <h2>
+            4. Was zeichnet Dich als Leader aus?
+        </h2>
+
+        <p>
+            Klare Führung ohne unnötiges Drama
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <p>
+            Als Leader möchte ich vor allem durch Organisation,
+            Kommunikation und ein faires Auftreten überzeugen.
+            Für mich bedeutet Führung nicht, einfach Befehle
+            zu geben, sondern Verantwortung für die gesamte
+            Organisation zu übernehmen.
+        </p>
+
+        <p>
+            Ich möchte durch Durchsetzungsvermögen,
+            Teamfähigkeit, gute Kommunikation, Fairness,
+            Verantwortungsbewusstsein, Aktivität und Motivation
+            überzeugen. Regeln und Entscheidungen sollen klar
+            kommuniziert und konsequent umgesetzt werden.
+        </p>
+
+        <p>
+            Gleichzeitig möchte ich meine Member aktiv einbeziehen
+            und Aufgaben sinnvoll delegieren. Probleme sollen
+            möglichst früh angesprochen und gemeinsam gelöst
+            werden. Rang oder persönliche Beziehungen sollen
+            nicht darüber entscheiden, wie ein Mitglied behandelt
+            wird.
+        </p>
+
+        <p>
+            Wenn innerhalb der Führung Fehler passieren,
+            möchte ich dafür Verantwortung übernehmen und
+            daraus Konsequenzen ziehen. Außerdem möchte ich
+            als Leader regelmäßig präsent sein und die Entwicklung
+            der Organisation aktiv begleiten.
+        </p>
+
+        <p>
+            Mitglieder, die sich besonders engagieren, sollen
+            wahrgenommen werden und die Möglichkeit bekommen,
+            mehr Verantwortung zu übernehmen. Mein Führungsstil
+            soll eine Mischung aus klaren Regeln und einem guten
+            Verhältnis innerhalb der Gang sein.
+        </p>
+
+        <p>
+            Respekt soll in beide Richtungen funktionieren:
+            Die Führung respektiert ihre Member und erwartet
+            gleichzeitig, dass die gemeinsamen Regeln eingehalten
+            werden.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RANGKONZEPT
+========================= -->
+
+<section
+    id="ranks"
+    class="reveal"
+>
+
+    <div class="title">
+
+        <small>
+            04 • Organisation
+        </small>
+
+        <h2>
+            Rangkonzept
+        </h2>
+
+        <p>
+            Klare Aufgaben und Verantwortungen
+        </p>
+
+    </div>
+
+
+    <div class="card ranks">
+
+        <div class="rank">
+            <div class="ranknum">12</div>
+            <div>
+                <b>OG</b>
+                <span>Gesamtverantwortung & Führung</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">11</div>
+            <div>
+                <b>Vize OG</b>
+                <span>Unterstützung der Führung</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">10</div>
+            <div>
+                <b>Mastermind Gangster</b>
+                <span>Erfahrene Führungsebene</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">9</div>
+            <div>
+                <b>Turf Lead</b>
+                <span>Koordination der Turf-Aktivitäten</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">8</div>
+            <div>
+                <b>Instructor</b>
+                <span>Ausbildung neuer Mitglieder</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">7</div>
+            <div>
+                <b>Turfer</b>
+                <span>Aktive Turf-Unterstützung</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">6</div>
+            <div>
+                <b>Original Balla</b>
+                <span>Erfahrenes Mitglied</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">5</div>
+            <div>
+                <b>Old Balla</b>
+                <span>Fortgeschrittenes Mitglied</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">4</div>
+            <div>
+                <b>True Balla</b>
+                <span>Etabliertes Gangmitglied</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">3</div>
+            <div>
+                <b>Homie</b>
+                <span>Aktives Mitglied</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">2</div>
+            <div>
+                <b>Runner</b>
+                <span>Neueres Mitglied</span>
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="ranknum">1</div>
+            <div>
+                <b>Snitch</b>
+                <span>Sanktionsrang bei Regelverstößen</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KONZEPT
+========================= -->
+
+<section class="reveal">
+
+    <div class="title">
+
+        <small>
+            05 • Konzept
+        </small>
+
+        <h2>
+            5. Konzept meiner Organisation
+        </h2>
+
+        <p>
+            East Side Ballas – Zusammenhalt, Aktivität
+            und Roleplay
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <p>
+            Die East Side Ballas sollen eine strukturierte,
+            aktive und RP-starke Organisation werden. Mein
+            Konzept basiert vor allem auf drei wichtigen Punkten:
+            Zusammenhalt, Aktivität und Roleplay.
+        </p>
+
+        <p>
+            Die Rangstruktur soll klare Verantwortlichkeiten
+            schaffen. Höhere Ränge übernehmen Führungs- und
+            Ausbildungsaufgaben, während niedrigere Ränge sich
+            durch Aktivität, gutes Verhalten und Leistung
+            weiterentwickeln können.
+        </p>
+
+        <p>
+            Beförderungen sollen nicht ausschließlich nach
+            Spielzeit erfolgen. Entscheidend sind Aktivität,
+            RP-Verhalten, Zuverlässigkeit, Teamfähigkeit und
+            der Umgang mit anderen Spielern.
+        </p>
+
+        <p>
+            Der Rang 1, Snitch, stellt dabei eine Besonderheit
+            dar. Snitch ist kein regulärer Aufstiegsrang,
+            sondern dient als Sanktionsrang innerhalb der
+            Organisation. Dieser Rang kann bei Regelverstößen
+            oder anderen disziplinarischen Maßnahmen vergeben
+            werden.
+        </p>
+
+        <p>
+            Im Alltag soll es verschiedene Möglichkeiten geben,
+            aktiv zu sein. Dazu gehören gemeinsame Fahrten,
+            Turf, Gang-Treffen, RP-Geschichten, Verhandlungen,
+            interne Events und Aktionen mit anderen Organisationen.
+            Dadurch soll verhindert werden, dass die Gang
+            ausschließlich auf eine einzelne Aktivität reduziert
+            wird.
+        </p>
+
+        <p>
+            Als Leader möchte ich außerdem eine klare
+            Kommunikation innerhalb der Organisation schaffen.
+            Die Member sollen wissen, an wen sie sich bei
+            Problemen wenden können und welche Aufgaben sie
+            übernehmen können.
+        </p>
+
+        <p>
+            Langfristig möchte ich eine stabile East Side Ballas
+            aufbauen, die durch aktives Roleplay, gute Organisation
+            und starken Zusammenhalt funktioniert. Dabei soll
+            nicht nur die Führung im Mittelpunkt stehen, sondern
+            vor allem, dass die Mitglieder Spaß an ihrer Rolle
+            haben und dauerhaft motiviert bleiben.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ALLTAG
+========================= -->
+
+<section class="reveal">
+
+    <div class="title">
+
+        <small>
+            06 • Alltag
+        </small>
+
+        <h2>
+            Der Alltag der Ballas
+        </h2>
+
+        <p>
+            Gemeinsam aktiv im Staat
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                Turfs & Training
+            </h3>
+
+            <p>
+                Aktive Turfs und gemeinsame Trainings
+                zur Verbesserung der Zusammenarbeit.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Ghetto-Präsenz
+            </h3>
+
+            <p>
+                Gemeinsame Präsenz im Ghetto und
+                bei verschiedenen Gang-Aktivitäten.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Aktionen
+            </h3>
+
+            <p>
+                Geplante und spontane Aktionen,
+                bei denen möglichst viele Member
+                eingebunden werden.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Events
+            </h3>
+
+            <p>
+                Interne Treffen und gemeinsame Events
+                sorgen für einen abwechslungsreichen
+                Gang-Alltag.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Konflikte
+            </h3>
+
+            <p>
+                RP mit anderen Gangs, bei dem sich
+                Situationen entwickeln können, ohne
+                sofort in eine Schießerei überzugehen.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Gemeinschaft
+            </h3>
+
+            <p>
+                Die Mitglieder sollen gemeinsam RP
+                schaffen und eigene Ideen einbringen können.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ZIELE
+========================= -->
+
+<section
+    id="ziele"
+    class="reveal"
+>
+
+    <div class="title">
+
+        <small>
+            07 • Zukunft
+        </small>
+
+        <h2>
+            Unsere Ziele
+        </h2>
+
+        <p>
+            Die ersten Schritte für eine stabile Organisation
+        </p>
+
+    </div>
+
+
+    <div class="card steps">
+
+        <div class="step">
+
+            <div class="num">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    Einen festen Kern aufbauen
+                </h3>
+
+                <p>
+                    Zunächst soll ein zuverlässiger Kern
+                    aus aktiven Mitgliedern entstehen,
+                    bevor die Gang weiter vergrößert wird.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="num">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    Ordnung in die Gang bringen
+                </h3>
+
+                <p>
+                    Klare Aufgaben, Rangstrukturen und
+                    Kommunikationswege sollen unnötiges
+                    Chaos bei Aktionen vermeiden.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="num">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    Die Ballas sichtbar machen
+                </h3>
+
+                <p>
+                    Regelmäßige Präsenz und gemeinsame
+                    Aktivitäten sollen die Ballas als
+                    geschlossene Organisation zeigen.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="num">
+                04
+            </div>
+
+            <div>
+
+                <h3>
+                    Langfristig aktiv bleiben
+                </h3>
+
+                <p>
+                    Die Organisation soll nicht nur
+                    kurzfristig funktionieren, sondern
+                    eine stabile Grundlage für langfristiges
+                    RP schaffen.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABSCHLUSS
+========================= -->
+
+<section class="reveal">
+
+    <div class="quote">
+
+        <strong>
+            EAST SIDE BALLAS
+        </strong>
+
+        <p>
+            Die Ballas sollen nicht nur eine Farbe tragen –
+            sie sollen als Gemeinschaft dahinterstehen.
+        </p>
+
+        <p>
+            <strong>
+                Maximilian Mccalley • ID 296801
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    GRAND RP • EAST SIDE BALLAS • LEADERBEWERBUNG
+
+    <br>
+
+    <strong>
+        Maximilian Mccalley | ID 296801
+    </strong>
+
+</footer>
+
+
+<!-- =========================
+     ANIMATION SCRIPT
+========================= -->
+
+<script>
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(
+        element => observer.observe(element)
+    );
+
+</script>
+
+</body>
+</html>
